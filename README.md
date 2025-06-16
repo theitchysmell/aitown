@@ -1,60 +1,40 @@
 # aitown
-# AI Town Application
+
+This repository contains a minimal implementation of an **AI Town** application. It is composed of a small Express server and a very light React client that demonstrates how agents can be managed and displayed.
 
 ## Project Overview
-AI Town is a web-based application that simulates an interactive environment for AI agents. Each agent has a unique profile with details such as name, age, preferences, skills, occupation, routines, and social connections. The application allows for the creation, management, and interaction of these agents, providing a dynamic and engaging user experience.
+The aim of this project is to provide a simple starting point for experimenting with AI agents in a web environment. The server exposes an API for creating and listing agents, while the client consumes this API and allows users to add agents from the browser.
 
-## Features
-- Agent Creation: Users can create and customize their AI agents.
-- Agent Interaction: AI agents can interact based on their defined characteristics and relationships.
-- Builder Interface: A tool for users to collaboratively construct and manage AI agent attributes and interactions.
-- Community Hub: Users can engage with a community of other AI enthusiasts, share insights, and collaborate on projects.
+## Directory Structure
+- `server/` – Express server exposing `/api/agents`
+- `client/` – Static client using React from a CDN
 
 ## Getting Started
-These instructions will get you a copy of the project up and running on your local machine for development and testing purposes.
-
 ### Prerequisites
-- Node.js
-- npm or yarn
-- MongoDB
+- Node.js and npm
 
 ### Installing
-Clone the repository to your local machine:
+Install dependencies for the server:
 ```bash
-git clone https://github.com/theitchysmell/ai-town-app.git
-cd ai-town-app
-
-Install the required dependencies:
-# For the server
 cd server
 npm install
+```
 
-# For the client
-cd client
-npm install
+The client has no build step and can be served with any static file server.
 
-Running the Application
-To start the server:
-
-cd server
+### Running the Application
+Start the server (listens on `http://localhost:3001`):
+```bash
 npm start
+```
 
-To start the client:
+Serve the client (for example using `npx serve`):
+```bash
+cd ../client
+npx serve -l 3000
+```
 
-cd client
-npm start
+Once both are running, open `http://localhost:3000` in your browser.
 
-The application will be running at http://localhost:3000/.
-
-Contributing
-Please read CONTRIBUTING.md for details on our code of conduct, and the process for submitting pull requests to us.
-
-Versioning
-We use SemVer for versioning. For the versions available, see the tags on this repository.
-
-Authors
-Michael Lind - Ml - theitchysmell
-See also the list of contributors who participated in this project.
-
-License
-This project is licensed under the MIT License - see the LICENSE.md file for details.
+## License
+This project is licensed under the MIT License.
